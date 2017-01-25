@@ -9,7 +9,7 @@ This project contains the code or part of the code for the dialogue generation p
 * [5] J.Li, W.Monroe, D.Jurafsky. "[A Simple, Fast Diverse Decoding Algorithm for Neural Generation](https://arxiv.org/pdf/1611.08562.pdf)"
 * [6] J.Li, W.Monroe, D.Jurafsky. "Data Distillation for Controlling Specificity in Dialogue Generation (to appear on arxiv)"
 
-This project is maintained by [Jiwei Li](http://www.stanford.edu/~jiweil/). Contact jiweil@stanford.edu for relevant issues. This repo will continue to be updated. Thanks to all the collaborators: [Will Monroe](http://stanford.edu/~wmonroe4/), [Michel Galley](https://www.microsoft.com/en-us/research/people/mgalley/), [Alan Ritter](http://aritter.github.io/), [TianLin Shi](http://www.timshi.xyz/home/index.html), [Jianfeng Gao](http://research.microsoft.com/en-us/um/people/jfgao/), [Chris Brockett](https://www.microsoft.com/en-us/research/people/chrisbkt/), [Bill Dolan](https://www.microsoft.com/en-us/research/people/billdol/) and [Dan Jurafsky](https://web.stanford.edu/~jurafsky/)
+This project is maintained by [Jiwei Li](http://www.stanford.edu/~jiweil/). Contact jiweil@stanford.edu for relevant issues. This repo will continue to be updated. Thanks to all the collaborators: [Will Monroe](http://stanford.edu/~wmonroe4/), [Michel Galley](https://www.microsoft.com/en-us/research/people/mgalley/), [Alan Ritter](http://aritter.github.io/), [TianLin Shi](http://www.timshi.xyz/home/index.html), [Jianfeng Gao](http://research.microsoft.com/en-us/um/people/jfgao/), [Chris Brockett](https://www.microsoft.com/en-us/research/people/chrisbkt/), [Bill Dolan](https://www.microsoft.com/en-us/research/people/billdol/) and [Dan Jurafsky](https://web.stanford.edu/~jurafsky/).
 
 #Setup
 
@@ -294,6 +294,7 @@ use a pre-trained Seq2Seq model for data distillation. Other than input paramete
         -model_file     (default ../../Atten/save_t_given_s/model1, path for loading a pre-trained generative model)
     
 to run the model:
+
     th distill_encode.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -params_file Seq2SeqParamsFile -model_file Seq2SeqModelFile -batch_size 6400
 
 
