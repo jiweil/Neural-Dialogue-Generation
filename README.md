@@ -261,7 +261,8 @@ to run the model:
 
 * Third, compute relevance score for the entire training set and then distill the dataset. The code provides two different ways to compute relevance score: either using a pre-trained Seq2Seq model or averaging Glove embeddings
     cd ../Glove or cd ../Encoder
-####Glove
+
+###Glove
 
 options include
     
@@ -284,7 +285,8 @@ options include
 
 The remaining data after this round of data distillation will be stored in FileForRemainingData, on which a new Seq2Seq model will be trained.
         
-####Encoder: use a pre-trained Seq2Seq model for data distillation. Other than input parameters in Glove, the path for a pre-trained Seq2Seq model needs to be pre-specified
+###Encoder
+use a pre-trained Seq2Seq model for data distillation. Other than input parameters in Glove, the path for a pre-trained Seq2Seq model needs to be pre-specified
 
         -params_file        (default "../../Atten/save_t_given_s/params", hyperparameters for the pre-trained generative model)
         -model_file     (default ../../Atten/save_t_given_s/model1, path for loading a pre-trained generative model)
@@ -295,7 +297,7 @@ The remaining data after this round of data distillation will be stored in FileF
 
 
 ### Acknowledgments
-    [Yoon Kim](http://people.fas.harvard.edu/~yoonkim)'s [MT repo]("https://github.com/harvardnlp/seq2seq-attn")
+[Yoon Kim](http://people.fas.harvard.edu/~yoonkim)'s [MT repo]("https://github.com/harvardnlp/seq2seq-attn")
 
 #### Licence
 MIT
