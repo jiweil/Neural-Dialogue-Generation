@@ -9,7 +9,7 @@ This project contains the code or part of the code for the dialogue generation p
 * [5] J.Li, W.Monroe, D.Jurafsky. "[A Simple, Fast Diverse Decoding Algorithm for Neural Generation](https://arxiv.org/pdf/1611.08562.pdf)"
 * [6] J.Li, W.Monroe, D.Jurafsky. "Data Distillation for Controlling Specificity in Dialogue Generation (to appear on arxiv)"
 
-This project is maintained by [Jiwei Li](http://www.stanford.edu/~jiweil/), jiweil@stanford.edu . Thanks to all the collaborators: [Will Monroe](http://stanford.edu/~wmonroe4/), [Michel Galley](https://www.microsoft.com/en-us/research/people/mgalley/), [Alan Ritter](http://aritter.github.io/), [TianLin Shi](http://www.timshi.xyz/home/index.html), [Jianfeng Gao](http://research.microsoft.com/en-us/um/people/jfgao/), [Chris Brockett](https://www.microsoft.com/en-us/research/people/chrisbkt/), [Bill Dolan](https://www.microsoft.com/en-us/research/people/billdol/) and [Dan Jurafsky](https://web.stanford.edu/~jurafsky/)
+This project is maintained by [Jiwei Li](http://www.stanford.edu/~jiweil/). Contact jiweil@stanford.edu for bugs. Thanks to all the collaborators: [Will Monroe](http://stanford.edu/~wmonroe4/), [Michel Galley](https://www.microsoft.com/en-us/research/people/mgalley/), [Alan Ritter](http://aritter.github.io/), [TianLin Shi](http://www.timshi.xyz/home/index.html), [Jianfeng Gao](http://research.microsoft.com/en-us/um/people/jfgao/), [Chris Brockett](https://www.microsoft.com/en-us/research/people/chrisbkt/), [Bill Dolan](https://www.microsoft.com/en-us/research/people/billdol/) and [Dan Jurafsky](https://web.stanford.edu/~jurafsky/)
 
 ##Setup
 
@@ -63,6 +63,7 @@ After training, training models are stored in save_s_given_t/model*, input param
 ###decode
     
 Available options are:
+
     -beam_size      (default 7, beam size)
     -batch_size     (default 128, decoding batch size)
     -params_file    (default "../Atten/save_t_given_s/params", input parameter files for a pre-trained Seq2Seq model.)
@@ -117,6 +118,7 @@ the adversarial-reinforcement learning model and the adversarial-evaluation mode
 adversarial-evaluation: to train a binary evaluator (a hierarchical neural net) to label dialogues as machine-generated (negative) or human-generated (positive)
 
 Available options are:
+
     -batch_size     (default 128, batch size)
     -dimension      (default 512, vector dimensionality)
     -dropout        (default 0.2, dropout rate)
@@ -137,6 +139,7 @@ Available options are:
 to train the adversarial-reinforcement learning model in [3]
 
 Available options include:
+
     -disc_params        (default "../discriminative/save/params", hyperparameters for the pre-trained discriminative model)
     -disc_model         (default "../discriminative/save/iter1", path for loading a pre-trained discriminative model)
     -generate_params    (default "../../Atten/save_t_given_s/params", hyperparameters for the pre-trained generative model)
@@ -170,7 +173,8 @@ the future prediction (Soothsayer) models described in [4]
 
 to train the Soothsayer Model for Length Prediction
 
-Available options are:
+Available options include:
+
     -dimension      (default 512, vector dimensionality. The value should be the same as that of the pretrained Seq2Seq model. Otherwise, an error will be reported)
     -params_file        (default "../../Atten/save_t_given_s/params", load hyperparameters for a pre-trained generative model)
     -generate_model     (default ../../Atten/save_t_given_s/model1, path for loading the pre-trained generative model)
@@ -191,7 +195,7 @@ to train the model (a pretrained Seq2Seq model is required)
 
 train the Soothsayer Model to predict the backward probability p(s|t) of the mutual information model
 
-Available options are:
+Available options include:
 
     -dimension      (default 512, vector dimensionality. This value should be the same as that of the pretrained Seq2Seq model. Otherwise, an error will be reported)
     -batch_size     (default 128, batch_size)
