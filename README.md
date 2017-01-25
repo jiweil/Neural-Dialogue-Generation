@@ -277,13 +277,13 @@ options include
     -loadscore          (default false, whether to load already-computed relevance scores)
     -save_score         (default false, wehther to save relevance scores)
 
-    Compute relevance scores: 
+Compute relevance scores: 
     
-        th run.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -save_score -save_score_file relevance_score
+    th run.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -save_score -save_score_file relevance_score
     
-    Distill the Data: 
+Distill the Data: 
     
-        th run.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -total_lines "number of lines in yourTrainingData" -save_score_file relevance_score 
+    th run.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -total_lines "number of lines in yourTrainingData" -save_score_file relevance_score 
 
 The remaining data after this round of data distillation will be stored in FileForRemainingData, on which a new Seq2Seq model will be trained.
         
@@ -293,12 +293,12 @@ use a pre-trained Seq2Seq model for data distillation. Other than input paramete
         -params_file        (default "../../Atten/save_t_given_s/params", hyperparameters for the pre-trained generative model)
         -model_file     (default ../../Atten/save_t_given_s/model1, path for loading a pre-trained generative model)
     
-    to run the model:
-        th distill_encode.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -params_file Seq2SeqParamsFile -model_file Seq2SeqModelFile -batch_size 6400
+to run the model:
+    th distill_encode.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -params_file Seq2SeqParamsFile -model_file Seq2SeqModelFile -batch_size 6400
 
 
 ### Acknowledgments
-[Yoon Kim](http://people.fas.harvard.edu/~yoonkim)'s [MT repo]("https://github.com/harvardnlp/seq2seq-attn")
+[Yoon Kim](http://people.fas.harvard.edu/~yoonkim)'s [MT repo](https://github.com/harvardnlp/seq2seq-attn)
 
 #### Licence
 MIT
