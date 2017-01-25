@@ -25,7 +25,7 @@ cmd:option("-dSteps",5,"")
 cmd:option("-TeacherForce",true,"whether to run the teacher forcing model")
 
 local params= cmd:parse(arg)
-params.saveFolder=params.saveFolder.."/"..(params.vanillaReinforce and "MC_y_" or "MC_n_")..(params.TeacherForce and "Teacher_y_" or "Teacher_n_")..(params.baseline and "Base_y" or "Base_n").."_lr"..params.Timeslr
+params.saveFolder=params.saveFolder.."/"..(params.vanillaReinforce and "MC_n_" or "MC_y_")..(params.TeacherForce and "Teacher_y_" or "Teacher_n_")..(params.baseline and "Base_y" or "Base_n").."_lr"..params.Timeslr
 paths.mkdir(params.saveFolder)
 
 params.save_prefix=params.saveFolder.."/"
