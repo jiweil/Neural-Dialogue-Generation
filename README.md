@@ -239,7 +239,7 @@ To run the decoder with a pre-trained Soothsayer model of backward probability
     
 If you want to perform MMI reranking at the end,  -MMI_params_file and -MMI_model_file have to be pre-specified
 
-### distill
+## distill
 
 This folder contains the code for the data distillation method described in [6].
 
@@ -271,11 +271,11 @@ options include
     -batch_size         (default 1280, batch size)
     -save_score_file    (default "relevance_score", the path for saving relevance_score for each instance in the training set)
     -distill_rate       (default 0.08, the proportion of training data to distill in this round)
-    -distill_four_gram  (default true, whether to remove all training instances that share four-grams with one of the top frequent responses)
+    -distill_four_gram  (default true, whether to remove all training instances that share four-grams with any one of the top frequent responses)
     -loadscore          (default false, whether to load already-computed relevance scores)
     -save_score         (default false, wehther to save relevance scores)
 
-    Compute relevance score: 
+    Compute relevance scores: 
     
         th run.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -save_score -save_score_file relevance_score
     
@@ -291,8 +291,7 @@ use a pre-trained Seq2Seq model for data distillation. Other than input paramete
         -params_file        (default "../../Atten/save_t_given_s/params", hyperparameters for the pre-trained generative model)
         -model_file     (default ../../Atten/save_t_given_s/model1, path for loading a pre-trained generative model)
     
-    run the model:
-        
+    to run the model:
         th distill_encode.lua -TopResponseFile yourFileToStoreTopResponses -TrainingData yourTrainingData -OutputFile FileForRemainingData -params_file Seq2SeqParamsFile -model_file Seq2SeqModelFile -batch_size 6400
 
 
