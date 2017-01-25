@@ -1,0 +1,2 @@
+/data/users/$USER/fbsource/fbcode/buck-out/gen/deeplearning/torch/cuth.lex decode.lua -params_file ../../Atten/save_t_given_s/params -model_file ../../Atten/save_t_given_s/model1 -InputFile ../../data/t_given_s_test.txt -OutputFile Length_Predict_output -batch_size 128 -beam_size 7 -max_length 25 -FuturePredictorModelFile ../train_backward/save/4 -max_decoded_num 128 -PredictorWeight 1 -Task backward
+
