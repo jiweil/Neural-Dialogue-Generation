@@ -52,17 +52,19 @@ to train the forward p(t|s) model, run
         
     th train_atten.lua -train_file ../data/t_given_s_train.txt -dev_file ../data/t_given_s_dev.txt -test_file ../data/t_given_s_test.txt -saveFolder save_t_given_s
 
-After training, training models are stored in save_t_given_s/model*, input parameters are stored in save_t_given_s/params
+After training, the trained models will be stored in save_t_given_s/model*, input parameters are stored in save_t_given_s/params
 
 to train the backward model p(s|t), run
 
     th train_atten.lua -train_file ../data/s_given_t_train.txt -dev_file ../data/s_given_t_dev.txt -test_file ../data/s_given_t_test.txt -saveFolder save_s_given_t
 
-After training, training models are stored in save_s_given_t/model*, input parameters are stored insave_s_given_t/params
+the trained models will be stored in save_s_given_t/model*, input parameters are stored insave_s_given_t/params
 
 ##Decode
-    
-Available options are:
+
+Decoding given a pre-trained generative model. The pre-trained model doesn't have to be a vanila Seq2Seq model (for example, it can be a trained model from adversarial learning).   
+
+Available options include:
 
     -beam_size      (default 7, beam size)
     -batch_size     (default 128, decoding batch size)
@@ -76,7 +78,7 @@ Available options are:
     -min_length     (default 1, the minimum length of a decoded response)
     -NBest          (default false, whether to output a decoded N-best list (if true) or only  output the candidate with the greatest score(if false))
     -gpu_index      (default 1, the index of GPU to use for decoding)
-    -allowUNK       (default false, whether to allow to generate UNK token)
+    -allowUNK       (default false, whether to allow to generate UNK tokens)
     -MMI            (default false, whether to perform the mutual information reranking after decoding as in [1])
     -MMI_params_file    (default "../Atten/save_s_given_t/params", the input parameter file for training the backward model p(s|t))
     -MMI_model_file     (default "../Atten/save_s_given_t/model1", the path for loading the backward model p(s|t))
