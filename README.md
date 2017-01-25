@@ -60,7 +60,7 @@ to train the backward model p(s|t), run
 
 After training, training models are stored in save_s_given_t/model*, input parameters are stored insave_s_given_t/params
 
-##decode
+##Decode
     
 Available options are:
 
@@ -90,7 +90,7 @@ to run the model
 
 to run the mutual information reranking model in [1],  -MMI_params_file and -MMI_model_file need to be pre-specified
 
-##persona_addressee
+##Persona_Addressee
 
 the persona_addressee model described in [2]
 
@@ -109,7 +109,7 @@ to train the model
 
     th train.lua [params]
 
-##adversarial 
+##Adversarial 
 
 the adversarial-reinforcement learning model and the adversarial-evaluation model described in [3]
 
@@ -165,7 +165,7 @@ to train the model
 
     th train.lua [params]
 
-##future_prediction 
+##Future_Prediction 
 
 the future prediction (Soothsayer) models described in [4]
 
@@ -239,7 +239,7 @@ To run the decoder with a pre-trained Soothsayer model of backward probability
     
 If you want to perform MMI reranking at the end,  -MMI_params_file and -MMI_model_file have to be pre-specified
 
-## distill
+##Distill
 
 This folder contains the code for the data distillation method described in [6].
 

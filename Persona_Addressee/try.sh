@@ -1,0 +1,1 @@
+/data/users/$USER/fbsource/fbcode/buck-out/gen/deeplearning/torch/cuth.lex train.lua -train_file ../data/speaker_addressee_train.txt -dev_file ../data/speaker_addressee_dev.txt -test_file ../data/speaker_addressee_test.txt -speakerSetting speaker_addressee -saveFolder save 
