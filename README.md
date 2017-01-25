@@ -1,4 +1,4 @@
-##Neural Dialogue Generation
+#Neural Dialogue Generation
 
 This project contains the code or part of the code for the dialogue generation part in the following papers:
 * [1] J.Li, M.Galley, C.Brockett, J.Gao and B.Dolan. "[A Diversity-Promoting Objective Function for Neural Conversation Models](https://arxiv.org/pdf/1510.03055.pdf)".
@@ -52,13 +52,13 @@ to train the forward p(t|s) model, run
         
     th train_atten.lua -train_file ../data/t_given_s_train.txt -dev_file ../data/t_given_s_dev.txt -test_file ../data/t_given_s_test.txt -saveFolder save_t_given_s
 
-After training, the trained models will be stored in save_t_given_s/model*, input parameters are stored in save_t_given_s/params
+After training, the trained models will be saved in save_t_given_s/model*. input parameters will be stored in save_t_given_s/params
 
 to train the backward model p(s|t), run
 
     th train_atten.lua -train_file ../data/s_given_t_train.txt -dev_file ../data/s_given_t_dev.txt -test_file ../data/s_given_t_test.txt -saveFolder save_s_given_t
 
-the trained models will be stored in save_s_given_t/model*, input parameters are stored insave_s_given_t/params
+the trained models will be stored in save_s_given_t/model*. input parameters will be stored insave_s_given_t/params
 
 ##Decode
 
