@@ -156,7 +156,7 @@ Available options include:
     -baselineType   (default "critic", taking value of either "aver" or "critic". If set to "critic", another neural model is trained to estimate the reward, the role of which is similar to the critic in the actor-critic RL model; If set to "aver", just use the average reward for earlier examples as a baseline")
     -baseline_lr    (default 0.0005, learning rate for updating the critic)
     -logFreq        (default 2000, how often to print the log and save the model)
-    -Timeslr        (default 1, increasing the learning rate)
+    -Timeslr        (default 0.5, increasing the learning rate)
     -gSteps         (default 1, how often to update the generative model)
     -dSteps         (default 5, how often to update the discriminative model)
     -TeacherForce   (default true, whether to run the teacher forcing model)
@@ -166,6 +166,8 @@ To run the adversarial-reinforcement learning model, a pretrained generative mod
 to train the model
 
     th train.lua [params]
+
+Note: if you encounter the following error "bad argument #2 to '?' (out of range) in function model_backward" after training the model for tens of hours, this means the model has exploded (see the teacher forcing part in Section 3.2 of the paper). The reason why the error appears is because of the sampling algorithm in Torch. If you encounter this issue, shrink the value of the variable -Timeslr.
 
 #Future_Prediction 
 
