@@ -167,7 +167,7 @@ to train the model
 
     th train.lua [params]
 
-Note: if you encounter the following error "bad argument #2 to '?' (out of range) in function model_backward" after training the model for tens of hours, this means the model has exploded (see the teacher forcing part in Section 3.2 of the paper). The reason why the error appears is because of the sampling algorithm in Torch. If you encounter this issue, shrink the value of the variable -Timeslr.
+Note: if you encounter the following error "bad argument #2 to '?' (out of range) in function model_backward" after training the model for tens of hours, this means the model has exploded (see the teacher forcing part in Section 3.2 of the paper). The reason why the error appears as "bad argument #2 to '?'" is because of the sampling algorithm in Torch. If you encounter this issue, shrink the value of the variable -Timeslr.
 
 #Future_Prediction 
 
