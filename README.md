@@ -69,7 +69,7 @@ Available options include:
     -beam_size      (default 7, beam size)
     -batch_size     (default 128, decoding batch size)
     -params_file    (default "../Atten/save_t_given_s/params", input parameter files for a pre-trained Seq2Seq model.)
-    -model_file     (default "../Atten/save_s_given_t/model1",the path for loading a pre-trained Seq2Seq model)
+    -model_file     (default "../Atten/save_s_given_t/model1",path for loading a pre-trained Seq2Seq model)
     -setting        (default "BS", the setting for decoding, taking values of "sampling": sampling tokens from the distribution; "BS" standard beam search; "DiverseBS", the diverse beam search described in [5]; "StochasticGreedy", the StochasticGreedy model described in [6])
     -DiverseRate    (default 0. The diverse-decoding rate for penalizing intra-sibling hypotheses in the diverse decoding model described in [5])
     -InputFile      (default "../data/t_given_s_test.txt", the input file for decoding)
@@ -81,7 +81,7 @@ Available options include:
     -allowUNK       (default false, whether to allow to generate UNK tokens)
     -MMI            (default false, whether to perform the mutual information reranking after decoding as in [1])
     -MMI_params_file    (default "../Atten/save_s_given_t/params", the input parameter file for training the backward model p(s|t))
-    -MMI_model_file     (default "../Atten/save_s_given_t/model1", the path for loading the backward model p(s|t))
+    -MMI_model_file     (default "../Atten/save_s_given_t/model1", path for loading the backward model p(s|t))
     -max_decoded_num    (default 0. the maximum number of instances to decode. decode the entire input set if the value is set to 0.)
     -output_source_target_side_by_side  (default true, output input sources and decoded targets side by side)
     -dictPath       (default ../data/movie_25000, dictionary file)
@@ -261,17 +261,18 @@ to run the model:
 
     sh select_top_decoded.sh yourDecodingOutputFile yourFileToStoreTopResponses
 
-* Third, compute relevance score for the entire training set and then distill the dataset. The code provides two different ways to compute relevance score: either using a pre-trained Seq2Seq model or averaging Glove embeddings
+* Third, compute relevance scores for the entire training set and then distill the training set. The code provides two different ways to compute the scores: using a pre-trained Seq2Seq model or averaging Glove embeddings
+
     cd ../Glove or cd ../Encoder
 
 ##Glove
 
 options include
     
-    -TrainingData       (the path for your training data to distill)
-    -TopResponseFile    (the path for your extracted top frequent responses)
+    -TrainingData       (path for your training data to distill)
+    -TopResponseFile    (path for your extracted top frequent responses)
     -batch_size         (default 1280, batch size)
-    -save_score_file    (default "relevance_score", the path for saving relevance_score for each instance in the training set)
+    -save_score_file    (default "relevance_score", path for saving relevance_score for each instance in the training set)
     -distill_rate       (default 0.08, the proportion of training data to distill in this round)
     -distill_four_gram  (default true, whether to remove all training instances that share four-grams with any one of the top frequent responses)
     -loadscore          (default false, whether to load already-computed relevance scores)
