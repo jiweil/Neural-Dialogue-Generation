@@ -303,6 +303,7 @@ to run the model:
 
 ## Acknowledgments
 [Yoon Kim](http://people.fas.harvard.edu/~yoonkim)'s [MT repo](https://github.com/harvardnlp/seq2seq-attn)
+
 LantaoYu's [SeqGAN Repo](https://github.com/LantaoYu/SeqGAN)
 
 ### Licence
