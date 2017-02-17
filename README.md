@@ -21,6 +21,16 @@ This code requires Torch7 and the following luarocks packages
 * [torchx](https://github.com/nicholas-leonard/torchx)
 * [tds](https://github.com/torch/tds)
 
+#Data
+Processed traning datasets can be downloaded at [link](http://nlp.stanford.edu/data/OpenSubData.tar) (unpacks to 8.9GB). All tokens have been transformed to indexes (dictionary file found at data/movie_2500)
+
+    t_given_s_dialogue_length2_3.txt: dialogue length 2, minimum utterance length 3, sources and targets separated by "|"
+    s_given_t_dialogue_length2_3.txt: dialogue length 2, minimum utterance length 3, targets and sources separated by "|"
+    t_given_s_dialogue_length2_6.txt: dialogue length 2, minimum utterance length 6, sources and targets separated by "|"
+    s_given_t_dialogue_length2_6.txt: dialogue length 2, minimum utterance length 6, targets and sources separated by "|"
+    t_given_s_dialogue_length3_6.txt: dialogue length 3, minimum utterance length 6, contexts (consisting of 2 utterances) and targets separated by "|"
+
+
 
 #Atten
 Training a vanilla attention encoder-decoder model. 
