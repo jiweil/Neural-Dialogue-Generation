@@ -21,7 +21,7 @@ This code requires Torch7 and the following luarocks packages
 * [torchx](https://github.com/nicholas-leonard/torchx)
 * [tds](https://github.com/torch/tds)
 
-#Download Data
+# Download Data
 Processed traning datasets can be downloaded at [link](http://nlp.stanford.edu/data/OpenSubData.tar) (unpacks to 8.9GB). All tokens have been transformed to indexes (dictionary file found at data/movie_2500)
 
     t_given_s_dialogue_length2_3.txt: dialogue length 2, minimum utterance length 3, sources and targets separated by "|"
