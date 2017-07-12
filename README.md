@@ -1,4 +1,4 @@
-#Neural Dialogue Generation
+# Neural Dialogue Generation
 
 This project contains the code or part of the code for the dialogue generation part in the following papers:
 * [1] J.Li, M.Galley, C.Brockett, J.Gao and B.Dolan. "[A Diversity-Promoting Objective Function for Neural Conversation Models](https://arxiv.org/pdf/1510.03055.pdf)". NAACL2016.
@@ -11,7 +11,7 @@ This project contains the code or part of the code for the dialogue generation p
 
 This project is maintained by [Jiwei Li](http://www.stanford.edu/~jiweil/). Feel free to contact jiweil@stanford.edu for any relevant issue. This repo will continue to be updated. Thanks to all the collaborators: [Will Monroe](http://stanford.edu/~wmonroe4/), [Michel Galley](https://www.microsoft.com/en-us/research/people/mgalley/), [Alan Ritter](http://aritter.github.io/), [TianLin Shi](http://www.timshi.xyz/home/index.html), [Jianfeng Gao](http://research.microsoft.com/en-us/um/people/jfgao/), [Chris Brockett](https://www.microsoft.com/en-us/research/people/chrisbkt/), [Bill Dolan](https://www.microsoft.com/en-us/research/people/billdol/) and [Dan Jurafsky](https://web.stanford.edu/~jurafsky/).
 
-#Setup
+# Setup
 
 This code requires Torch7 and the following luarocks packages 
 * [fbtorch](https://github.com/facebook/fbtorch)
@@ -21,7 +21,7 @@ This code requires Torch7 and the following luarocks packages
 * [torchx](https://github.com/nicholas-leonard/torchx)
 * [tds](https://github.com/torch/tds)
 
-#Download Data
+# Download Data
 Processed traning datasets can be downloaded at [link](http://nlp.stanford.edu/data/OpenSubData.tar) (unpacks to 8.9GB). All tokens have been transformed to indexes (dictionary file found at data/movie_2500)
 
     t_given_s_dialogue_length2_3.txt: dialogue length 2, minimum utterance length 3, sources and targets separated by "|"
@@ -32,7 +32,7 @@ Processed traning datasets can be downloaded at [link](http://nlp.stanford.edu/d
 
 
 
-#Atten
+# Atten
 Training a vanilla attention encoder-decoder model. 
 
 Available options include:
@@ -70,7 +70,7 @@ to train the backward model p(s|t), run
 
 the trained models will be stored in save_s_given_t/model*. input parameters will be stored insave_s_given_t/params
 
-#Decode
+# Decode
 
 Decoding given a pre-trained generative model. The pre-trained model doesn't have to be a vanila Seq2Seq model (for example, it can be a trained model from adversarial learning).   
 
@@ -102,7 +102,7 @@ to run the model
 
 to run the mutual information reranking model in [1],  -MMI_params_file and -MMI_model_file need to be pre-specified
 
-#Persona_Addressee
+# Persona_Addressee
 
 the persona_addressee model described in [2]
 
@@ -121,11 +121,11 @@ to train the model
 
     th train.lua [params]
 
-#Adversarial 
+# Adversarial 
 
 the adversarial-reinforcement learning model and the adversarial-evaluation model described in [3]
 
-##discriminative 
+## discriminative 
 
 adversarial-evaluation: to train a binary evaluator (a hierarchical neural net) to label dialogues as machine-generated (negative) or human-generated (positive)
 
@@ -146,7 +146,7 @@ Available options are:
     -save_params_file       (default "save/params", path for saving input hyperparameters)
     -saveModel              (default true, whether to save the model)
 
-##Reinforce
+## Reinforce
 
 to train the adversarial-reinforcement learning model in [3]
 
@@ -179,11 +179,11 @@ to train the model
 
 Note: if you encounter the following error "bad argument #2 to '?' (out of range) in function model_backward" after training the model for tens of hours, this means the model has exploded (see the teacher forcing part in Section 3.2 of the paper). The reason why the error appears as "bad argument #2 to '?'" is because of the sampling algorithm in Torch. If you encounter this issue, shrink the value of the variable -Timeslr.
 
-#Future_Prediction 
+# Future_Prediction 
 
 the future prediction (Soothsayer) models described in [4]
 
-##train_length 
+## train_length 
 
 to train the Soothsayer Model for Length Prediction
 
@@ -205,7 +205,7 @@ to train the model (a pretrained Seq2Seq model is required)
 
     th train_length.lua [params]
 
-##train_backward
+## train_backward
 
 train the Soothsayer Model to predict the backward probability p(s|t) of the mutual information model
 
@@ -232,7 +232,7 @@ to train the model (a pretrained forward Seq2Seq model p(t|s) and a backward mod
     th train.lua [params]
 
 
-##decode
+## decode
     
 decoding by combining a pre-trained Seq2Seq model and a Soothsayer future prediction model
     
@@ -253,7 +253,7 @@ To run the decoder with a pre-trained Soothsayer model of backward probability
     
 If you want to perform MMI reranking at the end,  -MMI_params_file and -MMI_model_file have to be pre-specified
 
-#Distill
+# Distill
 
 This folder contains the code for the data distillation method described in [6].
 
@@ -277,7 +277,7 @@ to run the model:
 
     cd ../Glove or cd ../Encoder
 
-##Glove
+## Glove
 
 options include
     
@@ -300,7 +300,7 @@ Distill the Data:
 
 The remaining data after this round of data distillation will be stored in FileForRemainingData, on which a new Seq2Seq model will be trained.
         
-##Encoder
+## Encoder
 use a pre-trained Seq2Seq model for data distillation. Other than input parameters in Glove, the path for a pre-trained Seq2Seq model needs to be pre-specified
 
         -params_file        (default "../../Atten/save_t_given_s/params", hyperparameters for the pre-trained generative model)
